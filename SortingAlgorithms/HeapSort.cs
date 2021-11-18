@@ -2,37 +2,37 @@
 {
     public static class HeapSort
     {
-        public static void Sort(int[] arr)
+        public static void Sort(int[] array)
         {
-            var n = arr.Length;
-            for (var i = n / 2 - 1; i >= 0; i--) Heapify(arr, n, i);
+            var n = array.Length;
+            for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i);
 
             for (var i = n-1; i >= 0; i--) 
             {
-                var temp = arr[0];
-                arr[0] = arr[i];
-                arr[i] = temp;
+                var temp = array[0];
+                array[0] = array[i];
+                array[i] = temp;
 
-                Heapify(arr, i, 0);
+                Heapify(array, i, 0);
             }
         }
 
-        private static void Heapify(int[] arr, int n, int i)
+        private static void Heapify(int[] array, int n, int i)
         {
             var largest = i;
             var left = 2 * i + 1;
             var right = 2 * i + 2;
 
-            if (left < n && arr[left] > arr[largest]) largest = left;
-            if (right < n && arr[right] > arr[largest]) largest = right;
+            if (left < n && array[left] > array[largest]) largest = left;
+            if (right < n && array[right] > array[largest]) largest = right;
 
             if (largest != i)
             {
-                var swap = arr[i];
-                arr[i] = arr[largest];
-                arr[largest] = swap;
+                var swap = array[i];
+                array[i] = array[largest];
+                array[largest] = swap;
 
-                Heapify(arr, n, largest);
+                Heapify(array, n, largest);
             }
         }
     }
