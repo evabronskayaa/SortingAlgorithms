@@ -1,6 +1,6 @@
 ﻿namespace SortingAlgorithms
 {
-    public static class ShellSort
+    public static class ShellSorter
     {
         private static void Swap(ref int a, ref int b)
         {
@@ -9,7 +9,7 @@
             b = t;
         }
 
-        public static int[] Sort(int[] array)
+        public static int[] ShellSort(this int[] array)
         {
             var d = array.Length / 2;
             while (d >= 1)

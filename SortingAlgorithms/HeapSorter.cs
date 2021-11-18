@@ -1,8 +1,8 @@
 ﻿namespace SortingAlgorithms
 {
-    public static class HeapSort
+    public static class HeapSorter
     {
-        public static void Sort(int[] array)
+        public static void HeapSort(this int[] array)
         {
             var n = array.Length;
             for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i);
