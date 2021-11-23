@@ -9,6 +9,10 @@ namespace SortingAlgorithms
 {
     class TableSorting
     {
+        public static Table Sort(Table table, Table.Column column, ColumnType type, Order order)
+        {
+
+        }
 
 
         public enum ColumnType
@@ -17,11 +21,10 @@ namespace SortingAlgorithms
             DateTime,
             Number
         }
-
         public enum Order
         {
-            Ascending,
-            Descending
+            Ascending = 1,
+            Descending = -1
         }
     }
 
