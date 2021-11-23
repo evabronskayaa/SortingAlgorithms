@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 
 namespace SortingAlgorithms
@@ -7,13 +8,16 @@ namespace SortingAlgorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            int[] arr = {12, 11, 13, 5, 6, 7};
-
-            arr.HeapSort();
+            Table table = new Table(@"C:\Users\igorb\Desktop\Test.csv");
+            Console.WriteLine(table.ToString());
             
-            Console.WriteLine("Sorted array is");
-            PrintArray(arr);
+            //Console.WriteLine("Hello World!");
+            //int[] arr = {12, 11, 13, 5, 6, 7};
+
+            //arr.HeapSort();
+            
+            //Console.WriteLine("Sorted array is");
+            //PrintArray(arr);
         }
         
         private static void PrintArray(int[] arr)
