@@ -20,14 +20,7 @@ namespace SortingAlgorithms
             //PrintArray(arr);
         }
         
-        private static void PrintArray(int[] arr)
-        {
-            int n = arr.Length;
-            for (int i = 0; i < n; ++i)
-                Console.Write(arr[i] + " ");
-        }
-        
-        public static void WriteLine(string arg)
+        public static void WriteWithDelay(string arg)
         {
             Console.WriteLine(arg);
             Thread.Sleep(200);
