@@ -36,20 +36,27 @@ namespace SortingAlgorithms
                     { "По убыванию", TableSorting.Order.Descending }
                 }
                 );
-
-            //Console.WriteLine("Hello World!");
-            //int[] arr = {12, 11, 13, 5, 6, 7};
-
-            //arr.HeapSort();
             
-            //Console.WriteLine("Sorted array is");
-            //PrintArray(arr);
+            
+            // Console.WriteLine("Hello World!");
+            // int[] arr = {12, 11, 13, 5, 6, 7};
+            //
+            // arr.ShellSort(ascending: false);
+            //
+            // Console.WriteLine("Sorted array is");
+            // PrintArray(arr);
+        }
+        private static void PrintArray(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 0; i < n; ++i)
+                Console.Write(arr[i] + " ");
         }
         
         public static void WriteWithDelay(string arg)
         {
             Console.WriteLine(arg);
-            Thread.Sleep(200);
+            Thread.Sleep(0);
         }
 
         public static T ChooseOption<T>(string comment, Dictionary<string, T> options)

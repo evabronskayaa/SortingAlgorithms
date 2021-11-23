@@ -4,7 +4,7 @@ namespace SortingAlgorithms
 {
     public static class HeapSorter
     {
-        public static void HeapSort<T>(this T[] array)
+        public static void HeapSort<T>(this T[] array, bool ascending = true)
             where T: IComparable
         {
             var n = array.Length;
@@ -23,6 +23,16 @@ namespace SortingAlgorithms
 
                 Program.WriteWithDelay("Вызываем процедуру heapify на уменьшенной куче");
                 Heapify(array, i, 0);
+            }
+
+            if (!ascending)
+            {
+                for (int i = 0; i < array.Length - i; i++)
+                {
+                    var value = array[array.Length - i - 1];
+                    array[array.Length - i - 1] = array[i];
+                    array[i] = value;
+                }
             }
         }
 

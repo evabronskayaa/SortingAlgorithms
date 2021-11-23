@@ -11,7 +11,7 @@ namespace SortingAlgorithms
             b = t;
         }
         
-        public static T[] ShellSort<T>(this T[] array)
+        public static T[] ShellSort<T>(this T[] array, bool ascending = true)
             where T: IComparable
         {
             var d = array.Length / 2;
@@ -35,6 +35,16 @@ namespace SortingAlgorithms
                 
                 Program.WriteWithDelay($"{d} уменьшается в 2 раза");
                 d /= 2;
+            }
+            
+            if (!ascending)
+            {
+                for (int i = 0; i < array.Length - i; i++)
+                {
+                    var value = array[array.Length - i - 1];
+                    array[array.Length - i - 1] = array[i];
+                    array[i] = value;
+                }
             }
 
             return array;
