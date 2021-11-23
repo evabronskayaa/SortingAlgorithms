@@ -60,7 +60,7 @@ namespace SortingAlgorithms
 
             return sb.ToString();
         }
-
+        
         public Table(string pathToCSV)
         {
             var lines = File.ReadAllLines(pathToCSV);
