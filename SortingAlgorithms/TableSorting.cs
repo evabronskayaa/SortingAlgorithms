@@ -10,6 +10,19 @@ namespace SortingAlgorithms
     class TableSorting
     {
 
+
+        public enum ColumnType
+        {
+            Text,
+            DateTime,
+            Number
+        }
+
+        public enum Order
+        {
+            Ascending,
+            Descending
+        }
     }
 
     public class Table
