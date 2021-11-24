@@ -73,12 +73,11 @@ namespace SortingAlgorithms
         }
         
         public static void HeapSort<T>(this T[] array, Func<T, IComparable> comparer, bool ascending = true)
-            where T: IComparable
         {
             var n = array.Length;
             Program.WriteWithDelay($"{n} - размер массива");
             Program.WriteWithDelay("Построение кучи (перегруппировка массива)");
-            for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i);
+            for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i, comparer);
             
             Program.WriteWithDelay("Один за другим извлекаем элементы из кучи");
             for (var i = n - 1; i >= 0; i--)
@@ -105,7 +104,6 @@ namespace SortingAlgorithms
         }
 
         private static void Heapify<T>(T[] array, int n, int i, Func<T, IComparable> comparer)
-            where T: IComparable
         {
             var largest = i;
             Program.WriteWithDelay($"Инициалация наибольший элемент как корня largest={largest}");
@@ -141,12 +139,11 @@ namespace SortingAlgorithms
         }
         
         public static void HeapSort<T>(this T[] array, Func<T, T, int> comparer, bool ascending = true)
-            where T: IComparable
         {
             var n = array.Length;
             Program.WriteWithDelay($"{n} - размер массива");
             Program.WriteWithDelay("Построение кучи (перегруппировка массива)");
-            for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i);
+            for (var i = n / 2 - 1; i >= 0; i--) Heapify(array, n, i, comparer);
             
             Program.WriteWithDelay("Один за другим извлекаем элементы из кучи");
             for (var i = n - 1; i >= 0; i--)
@@ -173,7 +170,6 @@ namespace SortingAlgorithms
         }
 
         private static void Heapify<T>(T[] array, int n, int i, Func<T, T, int> comparer)
-            where T: IComparable
         {
             var largest = i;
             Program.WriteWithDelay($"Инициалация наибольший элемент как корня largest={largest}");

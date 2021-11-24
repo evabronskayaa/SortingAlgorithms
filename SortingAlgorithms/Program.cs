@@ -36,6 +36,11 @@ namespace SortingAlgorithms
                     { "По убыванию", TableSorting.Order.Descending }
                 }
                 );
+
+            TableSorting.Sort(table, col, type, order);
+
+            Console.WriteLine();
+            Console.WriteLine(table.ToString());
             
             
             // Console.WriteLine("Hello World!");

@@ -9,9 +9,29 @@ namespace SortingAlgorithms
 {
     class TableSorting
     {
-        public static Table Sort(Table table, Table.Column column, ColumnType type, Order order)
+        public static void Sort(Table table, Table.Column column, ColumnType type, Order order)
         {
-
+            bool asc = order == Order.Ascending;
+            int elemIndex = Array.IndexOf(table.Columns, column);
+            try
+            {
+                if (type == ColumnType.Text)
+                {
+                    table.Rows.HeapSort((e1, e2) => ShellSorter.CompareStrings(e1.Elements[elemIndex], e2.Elements[elemIndex]), asc);
+                }
+                else if (type == ColumnType.Number)
+                {
+                    table.Rows.HeapSort(r => Convert.ToDecimal(r.Elements[elemIndex]), asc);
+                }
+                else
+                {
+                    table.Rows.HeapSort(r => Convert.ToDateTime(r.Elements[elemIndex]), asc);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"!!!ОШИБКА!!! >>> {ex.Message}");
+            }
         }
 
 
