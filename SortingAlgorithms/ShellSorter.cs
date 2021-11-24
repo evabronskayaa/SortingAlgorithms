@@ -49,46 +49,6 @@ namespace SortingAlgorithms
 
             return array;
         }
-        
-        public static T[] ShellSort<T>(this T[] array, Func<T, IComparable> comparer, bool ascending = true)
-            where T: IComparable
-        {
-            var d = array.Length / 2;
-            Program.WriteWithDelay($"Расстояние между элементами, которые сравниваются {d}");
-            
-            while (d >= 1)
-            {
-                Program.WriteWithDelay($"Пока расстояние {d} больше единицы делаем сравнение");
-                for (var i = d; i < array.Length; i++)
-                {
-                    Program.WriteWithDelay($"Сохраняем [{i}] в temp ");
-                    var j = i;
-                    Program.WriteWithDelay($"Cдвинуть ранее отсортированные по элементы вверх, пока не будет найдено правильное местоположение для [{i}]");
-                    while ((j >= d) && (comparer(array[j - d]).CompareTo(comparer(array[j]))>0))
-                    {
-                        Swap(ref array[j], ref array[j - d]);
-                        Program.WriteWithDelay($"Помещается temp (исходный array[{j}]) в правильное место");
-                        j -= d;
-                    }
-                }
-                
-                Program.WriteWithDelay($"{d} уменьшается в 2 раза");
-                d /= 2;
-            }
-            
-            if (!ascending)
-            {
-                for (int i = 0; i < array.Length - i; i++)
-                {
-                    var value = array[array.Length - i - 1];
-                    array[array.Length - i - 1] = array[i];
-                    array[i] = value;
-                }
-            }
-
-            return array;
-        }
-
 
         public static int CompareStrings(string a,string b)
         {
